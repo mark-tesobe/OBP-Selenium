@@ -13,4 +13,5 @@ This project is licensed under the AGPL V3 (see NOTICE) and a commercial license
 
 # SETUP
 
-see example.py. needs python3.
+see example.py. needs python3. Needs Firefox plus [geckodriver](https://github.com/mozilla/geckodriver)
+or chrome/chromium installed on the test maschine.
