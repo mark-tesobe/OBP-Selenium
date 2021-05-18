@@ -1,0 +1,8 @@
+venv
+env
+geckodriver.log
+__pycache__
+.idea
+build
+dist
+*.spec
