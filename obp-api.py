@@ -3,6 +3,8 @@ from __future__ import annotations
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class ObpAPI:
@@ -41,7 +43,7 @@ class RegisterLogin(ObpAPI):
         self._find_element_by_id("txtUsername").send_keys(RegisterLogin.USERNAME)
         self._find_element_by_id("textPassword").send_keys(RegisterLogin.PASSWORD)
         self._find_element_by_id("textPasswordRepeat").send_keys(RegisterLogin.PASSWORD)
-        self._find_element_by_id("terms_checkbox_value").click()
+        WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.ID, "terms_checkbox").click()))
         self._find_element_by_id("privacy_checkbox").click()
         self._find_element_by_id("submit-button").click()
         # username_text = self._find_element_by_id("authuser_username").text
